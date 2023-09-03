@@ -1,0 +1,47 @@
+﻿@page "{id:int}"
+@model HospitalAPP.Pages.AffiliatedWiths.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+    <h1 class="mb-3">Edit Affiliations</h1>
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="EditAffiliation.Id" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Physician ID</label>
+        <input type="number" class="form-control" asp-for="EditAffiliation.PhysicianId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department Id</label>
+        <input type="number" class="form-control" asp-for="EditAffiliation.DepartmentId" />
+    </div>
+
+ 
+
+    <div class="mb-3">
+        <label class="form-label">Primary Affiliation</label>
+        <input type="checkbox" class="form-check-input" asp-for="EditAffiliation.PrimaryAffiliation" />
+    </div>
+
+    <div class="mb-3 d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary" asp-page-handler="Edit">
+            Edit
+        </button>
+
+        <button type="submit" class="btn btn-danger" asp-page-handler="Delete">
+            Delete
+        </button>
+    </div>
+</form>

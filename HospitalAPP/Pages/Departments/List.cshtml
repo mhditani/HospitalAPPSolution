@@ -1,0 +1,42 @@
+﻿@page
+@model HospitalAPP.Pages.Departments.ListModel
+@{
+}
+
+
+<h1 class="mb-3">List of Departments</h1>
+@if (Model.Department != null && Model.Department.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>PhysicianId</th>
+            <th>Name</th>
+            
+
+
+        </tr>
+        <tbody>
+            @foreach (var department in Model.Department)
+            {
+                <tr>
+                    <td>@department.Id</td>
+                    <td>@department.PhysicianId</td>
+
+                    <td>@department.Name</td>
+                    
+
+
+
+                    <td>
+                        <a href="/Departments/Edit/@department.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Departments Found!</p>
+}

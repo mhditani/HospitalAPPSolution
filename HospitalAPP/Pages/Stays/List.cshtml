@@ -1,0 +1,41 @@
+﻿@page
+@model HospitalAPP.Pages.Stays.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Stays</h1>
+@if (Model.Staylist != null && Model.Staylist.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>PatientId</th>
+            <th>RoomId</th>
+            <th>StartTime</th>
+            <th>EndTime</th>
+
+        </tr>
+        <tbody>
+            @foreach (var stay in Model.Staylist)
+            {
+                <tr>
+                    <td>@stay.Id</td>
+                    <td>@stay.PatientId</td>
+
+                    <td>@stay.RoomId</td>
+                    <td>@stay.StartTime</td>
+                    <td>@stay.EndTime</td>
+
+
+                    <td>
+                        <a href="/Stays/Edit/@stay.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Stays Found!</p>
+}

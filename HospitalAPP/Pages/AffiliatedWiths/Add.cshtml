@@ -1,0 +1,36 @@
+﻿@page
+@model HospitalAPP.Pages.AffiliatedWiths.AddModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+    <h1 class="mb-3">Add New Affiliation</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Physician Id</label>
+        <input type="number" class="form-control" asp-for="AddAffiliated.PhysicianId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department Id</label>
+        <input type="number" class="form-control" asp-for="AddAffiliated.DepartmentId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Primary Affiliation</label>
+        <input type="checkbox" class="form-check-input" asp-for="AddAffiliated.PrimaryAffiliation" />
+    </div>
+
+
+ <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

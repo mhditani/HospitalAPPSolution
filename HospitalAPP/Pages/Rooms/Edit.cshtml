@@ -1,0 +1,45 @@
+﻿@page "{id:int}"
+@model HospitalAPP.Pages.Rooms.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+    <h1 class="mb-3">Edit Rooms</h1>
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="number" class="form-control" asp-for="EditRoom.Id" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Code</label>
+        <input type="text" class="form-control" asp-for="EditRoom.RoomType" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Unvailable</label>
+        <input type="checkbox" class="form-check-input" asp-for="EditRoom.Unvailable" />
+    </div>
+
+
+
+
+
+
+    <div class="mb-3 d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary" asp-page-handler="Edit">
+            Edit
+        </button>
+
+        <button type="submit" class="btn btn-danger" asp-page-handler="Delete">
+            Delete
+        </button>
+    </div>
+</form>

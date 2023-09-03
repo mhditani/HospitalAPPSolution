@@ -1,0 +1,42 @@
+﻿@page
+@model HospitalAPP.Pages.Appointments.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Appointments</h1>
+@if (Model.Appointments != null && Model.Appointments.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>PatientId</th>
+            <th>NurseId</th>
+            <th>PhysicianId</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>ExaminationRoom</th>
+        </tr>
+        <tbody>
+            @foreach (var app in Model.Appointments)
+            {
+                <tr>
+                    <td>@app.Id</td>
+                    <td>@app.PatientId</td>
+
+                    <td>@app.NurseId</td>
+                    <td>@app.PhysicianId</td>
+                    <td>@app.StartDate</td>
+                    <td>@app.EndDate</td>
+                    <td>@app.ExaminationRoom</td>
+                    <td>
+                        <a href="/Appointments/Edit/@app.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Appointments Found!</p>
+}

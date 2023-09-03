@@ -1,0 +1,40 @@
+﻿@page
+@model HospitalAPP.Pages.Nurses.ListModel
+@{
+}
+<h1 class="mb-3">List of Nurses</h1>
+@if (Model.Nurses != null && Model.Nurses.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>SSN</th>
+            <th>Registered</th>
+            <th>Position</th>
+
+        </tr>
+        <tbody>
+            @foreach (var nure in Model.Nurses)
+            {
+                <tr>
+                    <td>@nure.Id</td>
+                    <td>@nure.Name</td>
+
+                    <td>@nure.SSN</td>
+                    <td>@nure.Position</td>
+
+                    <td>@nure.Registered</td>
+
+                    <td>
+                        <a href="/Nurses/Edit/@nure.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Nurses Found!</p>
+}

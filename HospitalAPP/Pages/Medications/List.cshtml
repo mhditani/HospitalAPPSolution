@@ -1,0 +1,40 @@
+﻿@page
+@model HospitalAPP.Pages.Medications.ListModel
+@{
+}
+<h1 class="mb-3">List of Medications</h1>
+@if (Model.Med != null && Model.Med.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Description</th>
+
+
+        </tr>
+        <tbody>
+            @foreach (var med in Model.Med)
+            {
+                <tr>
+                    <td>@med.Id</td>
+                    <td>@med.Name</td>
+
+                    <td>@med.Brand</td>
+                    <td>@med.Description</td>
+
+
+
+                    <td>
+                        <a href="/Medications/Edit/@med.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Medications Found!</p>
+}

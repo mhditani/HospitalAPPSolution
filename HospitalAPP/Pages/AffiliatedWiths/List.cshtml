@@ -1,0 +1,41 @@
+﻿@page
+@model HospitalAPP.Pages.AffiliatedWiths.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Affiliations</h1>
+@if (Model.Affiliation != null && Model.Affiliation.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>PhysicianId</th>
+            <th>DepartmentId</th>
+            <th>PrimaryAffiliation</th>
+            
+
+        </tr>
+        <tbody>
+            @foreach (var affiliation in Model.Affiliation)
+            {
+                <tr>
+                    <td>@affiliation.Id</td>
+                    <td>@affiliation.PhysicianId</td>
+
+                    <td>@affiliation.DepartmentId</td>
+                    <td>@affiliation.PrimaryAffiliation</td>
+
+                    
+
+                    <td>
+                        <a href="/AffiliatedWiths/Edit/@affiliation.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Affiliations Found!</p>
+}

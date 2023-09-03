@@ -1,0 +1,42 @@
+﻿@page
+@model HospitalAPP.Pages.Prescribes.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Prescriptions</h1>
+@if (Model.Prescribe != null && Model.Prescribe.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>PhysicianId</th>
+            <th>PatientId</th>
+            <th>MedicationId</th>
+            <th>MedicationTime</th>
+            <th>AppointemntId</th>
+            <th>Dose</th>
+        </tr>
+        <tbody>
+            @foreach (var pre in Model.Prescribe)
+            {
+                <tr>
+                    <td>@pre.Id</td>
+                    <td>@pre.PhysicianId</td>
+
+                    <td>@pre.MedicationId</td>
+                    <td>@pre.MedicationTime</td>
+                    <td>@pre.AppointemntId</td>
+                    <td>@pre.Dose</td>
+
+                    <td>
+                        <a href="/Prescribes/Edit/@pre.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Prescriptions Found!</p>
+}

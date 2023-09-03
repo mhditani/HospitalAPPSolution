@@ -1,0 +1,42 @@
+﻿@page
+@model HospitalAPP.Pages.Nurses.AddModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<form method="post">
+    <h1 class="mb-3">Add New Nurse</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="AddNurse.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Social Security Number</label>
+        <input type="number" class="form-control" asp-for="AddNurse.SSN" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input type="text" class="form-control" asp-for="AddNurse.Position" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Registered</label>
+        <input type="checkbox" class="form-check-input" asp-for="AddNurse.Registered" />
+    </div>
+
+
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

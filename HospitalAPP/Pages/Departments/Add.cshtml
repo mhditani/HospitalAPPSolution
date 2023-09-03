@@ -1,0 +1,32 @@
+﻿@page
+@model HospitalAPP.Pages.Departments.AddModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<form method="post">
+    <h1 class="mb-3">Add New Department</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Physician Id</label>
+        <input type="number" class="form-control" asp-for="AddDepartment.PhysicianId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department Name</label>
+        <input type="text" class="form-control" asp-for="AddDepartment.Name" />
+    </div>
+
+
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

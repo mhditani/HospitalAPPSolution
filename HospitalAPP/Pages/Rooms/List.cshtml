@@ -1,0 +1,41 @@
+﻿@page
+@model HospitalAPP.Pages.Rooms.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Rooms</h1>
+@if (Model.Room != null && Model.Room.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>RoomType</th>
+            <th>Unvailable</th>
+            
+
+
+        </tr>
+        <tbody>
+            @foreach (var room in Model.Room)
+            {
+                <tr>
+                    <td>@room.Id</td>
+                    <td>@room.RoomType</td>
+
+                    <td>@room.Unvailable</td>
+                    
+
+
+
+                    <td>
+                        <a href="/Rooms/Edit/@room.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Rooms Found!</p>
+}

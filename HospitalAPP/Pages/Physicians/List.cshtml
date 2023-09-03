@@ -1,0 +1,36 @@
+﻿@page
+@model HospitalAPP.Pages.Physicians.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Physicians</h1>
+@if(Model.Physicians != null && Model.Physicians.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>SSN</th>
+            <th>DateOfBirth</th>
+
+        </tr>
+        <tbody>
+            @foreach (var physician in Model.Physicians)
+            {
+                <tr>
+                    <td>@physician.Id</td>
+                    <td>@physician.Name</td>
+                    <td>@physician.SSN</td>
+                    <td>@physician.DateOfBirth</td>
+                    <td>
+                        <a href="/Physicians/Edit/@physician.Id" class="btn btn-dark">Update</a>
+                    </td>
+               </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Physicians Found!</p>
+}

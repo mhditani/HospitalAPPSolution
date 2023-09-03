@@ -1,0 +1,41 @@
+﻿@page
+@model HospitalAPP.Pages.Procedures.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Procedures</h1>
+@if (Model.Procedure != null && Model.Procedure.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Cost</th>
+
+
+        </tr>
+        <tbody>
+            @foreach (var proc in Model.Procedure)
+            {
+                <tr>
+                    <td>@proc.Id</td>
+                    <td>@proc.Code</td>
+
+                    <td>@proc.Name</td>
+                    <td>@proc.Cost</td>
+
+
+
+                    <td>
+                        <a href="/Procedures/Edit/@proc.Id" class="btn btn-dark">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Procedures Found!</p>
+}

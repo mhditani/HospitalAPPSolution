@@ -1,0 +1,42 @@
+﻿@page
+@model HospitalAPP.Pages.Stays.AddModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+    <h1 class="mb-3">Add New Stay</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Patient Id</label>
+        <input type="number" class="form-control" asp-for="AddStay.PatientId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Room Id</label>
+        <input type="number" class="form-control" asp-for="AddStay.RoomId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Start Date</label>
+        <input type="date" class="form-control" asp-for="AddStay.StartTime" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">End Date</label>
+        <input type="date" class="form-control" asp-for="AddStay.EndTime" />
+    </div>
+
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
