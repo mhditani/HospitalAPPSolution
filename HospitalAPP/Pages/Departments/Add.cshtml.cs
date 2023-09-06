@@ -13,7 +13,7 @@ namespace HospitalAPP.Pages.Departments
         {
             this.dbContext = dbContext;
         }
-
+        [BindProperty]
         public AddDepartmentModel AddDepartment { get; set; }
         public void OnGet()
         {

@@ -3,22 +3,99 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
 <style>
-    body{
-        margin: 0;
-        padding: 0px;
-         background-image: url('images//hospital.gif');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-       
+    body {
         
+        
+        /* background-image: url('images/hospital.gif'); */
+        background-size: cover;
+        background-image: url('images/newhospital.gif'); /* Cover the entire background */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-attachment: fixed; /* Fix the background image in place */
+        /* background-size: 80% 165%; */
+        background-size: 100% 100%;
     }
 </style>
 
+<html>
+<head>
+    <link rel="stylesheet" href="/css/site.css" /> <!-- Adjust the path if needed -->
+</head>
+<body>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <h2 class="text-center">This is a Hospital Database Created by <strong>Mohammad Itani</strong></h2>
 </div>
 
+
+
+<div>
+<div>
+    <ul>
+        <li><a asp-page="/Physicians/Add">Add Physician</a></li>
+        <li><a asp-page="/Physicians/List">List Of Physicians</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Nurses/Add">Add A Nurse</a></li>
+        <li><a asp-page="/Nurses/List">List Of Nurses</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Patients/Add">Add A Patient</a></li>
+        <li><a asp-page="/Patients/List">List Of Patients</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Rooms/Add">Add A Room</a></li>
+        <li><a asp-page="/Rooms/List">List Of Rooms</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Appointments/Add">Add An Appointment</a></li>
+        <li><a asp-page="/Appointments/List">List Of Appointments</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Procedures/Add">Add An Procedure</a></li>
+        <li><a asp-page="/Procedures/List">List Of Procedurres</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Medications/Add">Add A Medication</a></li>
+        <li><a asp-page="/Medications/List">List Of Medications</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Departments/Add">Add A Department</a></li>
+        <li><a asp-page="/Departments/List">List Of Departments</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/Prescribes/Add">Add An Prescription</a></li>
+        <li><a asp-page="/Prescribes/List">List Of Prescriptions</a></li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><a asp-page="/AffiliatedWiths/Add">Add An Affiliation</a></li>
+        <li><a asp-page="/AffiliatedWiths/List">List Of Affiliations</a></li>
+    </ul>
+</div>
+ @*    <div>
+        <ul>
+            <li><a asp-page="/FeeCalculation/FeeCalculation">Calculate Fees</a></li>
+            
+        </ul>
+    </div> *@
+</div>
+</body>
+</html>
